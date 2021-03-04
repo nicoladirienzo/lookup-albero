@@ -37,7 +37,7 @@ export class AppComponent {
   }
   public data: any[] = [
     {
-      text: "Furniture",
+      text: "FurnitureSS",
       items: [
         { text: "Tables & Chairs" },
         { text: "Sofas" },
