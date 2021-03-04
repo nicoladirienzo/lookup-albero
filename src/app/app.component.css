@@ -61,7 +61,25 @@ p {
   background-color: #ffffff !important;
   border: none !important;
   border-color: #ffffff !important;
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 1);
 }
 .k-treeview .k-in {
   transition: none !important;
+  padding-top: 0.15rem;
+  padding-bottom: 0.15rem;
+  padding-right: 0.5rem;
+  padding-left: 0.2rem;
+}
+
+.k-treeview {
+  font-size: 0.9rem;
+  line-height: 0;
+}
+
+.k-checkbox {
+  border-radius: 0;
+}
+
+.k-in {
+  margin-left: 0.22rem;
 }
