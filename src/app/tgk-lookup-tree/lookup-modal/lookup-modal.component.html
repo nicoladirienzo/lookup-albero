@@ -18,7 +18,15 @@
         <p>Items selection</p>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 divStyle left-div">
-        <app-lookup-tree></app-lookup-tree>
+        <app-lookup-tree
+          [enableCheck]="enableCheck"
+          [checkChildren]="checkChildren"
+          [checkParents]="checkParents"
+          [checkOnClick]="checkOnClick"
+          [checkMode]="checkMode"
+          [selectionMode]="selectionMode"
+          [data]="treeData"
+        ></app-lookup-tree>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 right-div">
         <app-lookup-selection-area></app-lookup-selection-area>

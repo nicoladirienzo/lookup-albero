@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CheckableSettings } from '@progress/kendo-angular-treeview';
 import { Observable, of } from 'rxjs';
 
@@ -10,9 +10,31 @@ import { Observable, of } from 'rxjs';
 export class LookupModalComponent implements OnInit {
 
 
- 
+
 
   @Output() isDialogOpenEventChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+
+  @Input()
+  public enableCheck;
+
+  @Input()
+  public checkChildren
+
+  @Input()
+  public checkParents;
+
+  @Input()
+  public checkOnClick;
+
+  @Input()
+  public checkMode: any;
+
+  @Input()
+  public selectionMode: any;
+
+  @Input()
+  public treeData: any[];
+
 
   constructor() { }
 
