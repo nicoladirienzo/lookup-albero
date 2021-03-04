@@ -47,11 +47,21 @@ p {
 .k-in:hover {
   background-color: #ffffff !important;
   border: none !important;
-  border-color: #ffffff;
+  border-color: #ffffff !important;
 }
+.k-treeview,
 .k-in {
-  transition: none;
+  transition: none !important;
   background-color: #ffffff !important;
   border: none !important;
-  border-color: #ffffff;
+  border-color: #ffffff !important;
+}
+
+.k-treeview .k-in:hover {
+  background-color: #ffffff !important;
+  border: none !important;
+  border-color: #ffffff !important;
+}
+.k-treeview .k-in {
+  transition: none !important;
 }
