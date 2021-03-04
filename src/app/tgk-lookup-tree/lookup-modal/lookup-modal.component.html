@@ -1,11 +1,43 @@
-
 <!-- Componente che visualizza l'intera modale della lookup. 
     Al suo interno ci sono i componenti dell'albero e dell'area di selezione. -->
-<p>lookup-modal works!</p>
 
-
-<app-lookup-tree></app-lookup-tree>
-
-
-<app-lookup-selection-area></app-lookup-selection-area>
-
+<!--<kendo-dialog title="Items selection" *ngIf="opened" (close)="close('cancel')" [minWidth]="500" [minHeight]="500"
+	[maxWidth]="700" [maxHeight]="700" [width]="500" [height]="500">-->
+<kendo-dialog
+  (close)="close('cancel')"
+  [minWidth]="700"
+  [minHeight]="500"
+  [maxWidth]="900"
+  [maxHeight]="700"
+  [width]="500"
+  [height]="500"
+>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <p>Items selection</p>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 divStyle left-div">
+        <app-lookup-tree></app-lookup-tree>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 right-div">
+        <app-lookup-selection-area></app-lookup-selection-area>
+      </div>
+    </div>
+    <!--
+      <div
+        class="col-lg-12 col-md-12 col-sm-12 col-xs-12"
+        style="margin-bottom:0px;">
+        <button (click)="close('no')">Cancel</button>
+        <button kendoButton (click)="close('yes')" primary="true">OK</button>
+      </div>
+      -->
+  </div>
+  <kendo-dialog-actions>
+    <!--<button kendoButton (click)="close('no')">No</button>
+          <button kendoButton (click)="close('yes')" 
+      primary="true">Yes</button>-->
+    <button class="btn-del" (click)="close('no')">Cancel</button>
+    <button class="bt-default" (click)="close('yes')" primary="true">OK</button>
+  </kendo-dialog-actions>
+</kendo-dialog>
