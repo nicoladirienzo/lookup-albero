@@ -1,0 +1,57 @@
+p {
+  font-family: Lato;
+}
+
+.left-div {
+  border: 1px solid #afafaf;
+}
+
+.right-div {
+  border: 1px solid #afafaf;
+}
+.divStyle {
+  min-height: 350px;
+  max-height: 550px;
+}
+
+.k-dialog-titlebar {
+  background-color: #eaeaea !important;
+}
+.pt-5 {
+  padding-top: 5px !important;
+}
+
+.bt-default {
+  margin: 5px;
+  width: 70px;
+  height: 30px;
+  font-size: 12px;
+  background-color: #0071c8;
+  color: #ffffff;
+  border: #0071c8;
+}
+.btn-del {
+  margin: 5px;
+  width: 70px;
+  height: 30px;
+  font-size: 12px;
+  background-color: #ffffff;
+  color: #0071c8;
+  border: #ffffff;
+  font-weight: 600;
+  text-decoration: underline;
+}
+.k-dialog-buttongroup {
+  border: none;
+}
+.k-in:hover {
+  background-color: #ffffff !important;
+  border: none !important;
+  border-color: #ffffff;
+}
+.k-in {
+  transition: none;
+  background-color: #ffffff !important;
+  border: none !important;
+  border-color: #ffffff;
+}
