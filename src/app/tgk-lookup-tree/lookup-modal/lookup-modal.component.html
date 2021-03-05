@@ -18,6 +18,7 @@
         <p>Items selection</p>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 divStyle left-div">
+        <kendo-combobox [ngClass]="'cmbox'"  [data]="listItems" [allowCustom]="allowCustom" placeholder="Original Scenarios"></kendo-combobox>
         <app-lookup-tree
           [enableCheck]="enableCheck"
           [checkChildren]="checkChildren"

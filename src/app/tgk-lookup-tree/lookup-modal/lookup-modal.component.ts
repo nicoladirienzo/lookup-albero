@@ -35,6 +35,9 @@ export class LookupModalComponent implements OnInit {
   @Input()
   public treeData: any[];
 
+  public allowCustom = true;
+  
+  public listItems: Array<string> = ['Baseball', 'Basketball', 'Cricket', 'Field Hockey', 'Football', 'Table Tennis', 'Tennis', 'Volleyball'];
 
   constructor() { }
 

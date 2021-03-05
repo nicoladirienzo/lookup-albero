@@ -1,4 +1,28 @@
 <!-- Componente contenente il campo dei valori selezionati ed il pulsante (tre pallini) di apertura della modale -->
 
 
-<button kendoButton (click)="open()">Open dialog</button>
+<!-- <button kendoButton (click)="open()">Open dialog</button> -->
+
+
+<kendo-textarea [style.marginBottom.px]="10"
+            placeholder="Insert scenario"
+            resizable="auto"
+            flow="horizontal"
+            (valueChange)="onChange($event)"
+            (focus)="onFocus()"
+            (blur)="onBlur()"
+            (inputFocus)="onInputFocus()"
+            (inputBlur)="onInputBlur()">
+    <kendo-textarea-suffix>
+        <kendo-input-separator class="k-text-base"></kendo-input-separator>
+        <button kendoButton [look]="'clear'" [icon]="'more-horizontal'" (click)="open()"></button>
+    </kendo-textarea-suffix>
+</kendo-textarea>
+
+
+<!-- 
+    Gestione eventi del bottone presente nella Kendo-textarea esempio d'uso all'indirizzo:     
+    https://www.telerik.com/kendo-angular-ui/components/inputs/textarea/
+    nella sezione events.
+    <event-log title="Event log" [events]="events"></event-log> 
+-->

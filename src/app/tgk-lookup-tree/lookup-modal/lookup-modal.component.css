@@ -1,0 +1,63 @@
+  .left-div {
+    border: 1px solid #afafaf;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  
+  .right-div {
+    border: 1px solid #afafaf;
+  }
+  .divStyle {
+    min-height: 350px;
+    max-height: 550px;
+  }
+  
+  .k-dialog-titlebar {
+    background-color: #eaeaea !important;
+  }
+  .pt-5 {
+    padding-top: 5px !important;
+  }
+  
+  .bt-default {
+    margin: 5px;
+    width: 70px;
+    height: 30px;
+    font-size: 12px;
+    background-color: #0071c8;
+    color: #ffffff;
+    border: #0071c8;
+  }
+  .btn-del {
+    margin: 5px;
+    width: 70px;
+    height: 30px;
+    font-size: 12px;
+    background-color: #ffffff;
+    color: #0071c8;
+    border: #ffffff;
+    font-weight: 600;
+    text-decoration: underline;
+  }
+  
+  .k-dialog-buttongroup {
+    border: none;
+  }
+
+  /* .k-combobox .k-dropdown-wrap .k-searchbar .k-input */
+  .cmbox{
+    margin-top: 5px;
+    height:30px !important;
+    width: 100%;
+    font-size:12px;
+  }
+  
+  .k-dropdown-wrap{
+    border-radius: 0px !important;
+  }
+
+  .k-input{
+    padding: 0.15rem 0.75rem !important;
+    /* padding-top: 0.15rem !important;
+    padding-bottom: 0.15rem !important; */
+  }

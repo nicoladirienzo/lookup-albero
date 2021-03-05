@@ -1,7 +1,6 @@
 <!-- Componente che contiene l'albero popolato da tutti i dati selezionabili. -->
 <kendo-treeview
   [nodes]="data"
-  [filterable]="true"
   textField="text"
   kendoTreeViewExpandable
   kendoTreeViewHierarchyBinding
@@ -14,3 +13,10 @@
     <span class="k-in">{{ dataItem.text }}</span>
   </ng-template>
 </kendo-treeview>
+
+
+
+<!-- 
+  Campo di ricerca in testa alla treeview
+  [filterable]="true" 
+-->
