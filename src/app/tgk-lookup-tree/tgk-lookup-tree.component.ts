@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { CheckableSettings } from '@progress/kendo-angular-treeview';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-tgk-lookup-tree',
@@ -7,9 +9,40 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TgkLookupTreeComponent implements OnInit {
 
+
+  @Input()
+  public enableCheck;
+
+  @Input()
+  public checkChildren
+
+  @Input()
+  public checkParents;
+
+  @Input()
+  public checkOnClick;
+
+  @Input()
+  public checkMode: any;
+
+  @Input()
+  public selectionMode: any;
+
+  @Input()
+  public treeData: any[];
+
+
+  public opened = false;
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  onDialogOpenOrClose(eventValue: boolean): void {
+    this.opened = eventValue;
+  }
+
+
 
 }

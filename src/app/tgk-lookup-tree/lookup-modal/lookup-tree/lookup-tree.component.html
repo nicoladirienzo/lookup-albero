@@ -1,3 +1,16 @@
-
 <!-- Componente che contiene l'albero popolato da tutti i dati selezionabili. -->
-<p>lookup-tree works!</p>
+<kendo-treeview
+  [nodes]="data"
+  [filterable]="true"
+  textField="text"
+  kendoTreeViewExpandable
+  kendoTreeViewHierarchyBinding
+  childrenField="items"
+  [kendoTreeViewCheckable]="checkableSettings"
+  class="pt-5"
+>
+  <ng-template kendoTreeViewNodeTemplate let-dataItem>
+    <input class="k-checkbox" type="checkbox" *ngIf="!hasChildren(dataItem)" />
+    <span class="k-in">{{ dataItem.text }}</span>
+  </ng-template>
+</kendo-treeview>

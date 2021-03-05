@@ -2,8 +2,20 @@
     con il pulsante di apertura e della dialog stessa.
 È il componente che sarà utilizzabile dall'esterno ed è attraverso di questo che verranno passate
 tutte le parametrizzazioni -->
-<p>tgk-lookup-tree works!</p>
 
-<app-lookup-field></app-lookup-field>
+<app-lookup-field
+  *ngIf="!opened"
+  (isDialogOpenEventChange)="onDialogOpenOrClose($event)"
+></app-lookup-field>
 
-<app-lookup-modal></app-lookup-modal>
+<app-lookup-modal
+  *ngIf="opened"
+  (isDialogOpenEventChange)="onDialogOpenOrClose($event)"
+  [enableCheck]="enableCheck"
+  [checkChildren]="checkChildren"
+  [checkParents]="checkParents"
+  [checkOnClick]="checkOnClick"
+  [checkMode]="checkMode"
+  [selectionMode]="selectionMode"
+  [treeData]="treeData"
+></app-lookup-modal>

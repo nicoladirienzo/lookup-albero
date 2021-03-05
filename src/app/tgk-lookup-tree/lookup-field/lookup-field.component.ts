@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-lookup-field',
@@ -8,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class LookupFieldComponent implements OnInit {
 
   public events: string[] = [];
+
+  @Output() isDialogOpenEventChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+
 
   constructor() { }
 
@@ -38,4 +41,8 @@ export class LookupFieldComponent implements OnInit {
       this.events.unshift(`${event}`);
   }
 
+
+  public open() {
+    this.isDialogOpenEventChange.emit(true);
+  }
 }
