@@ -19,7 +19,6 @@
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 divStyle left-div">
         <kendo-treeview
           [nodes]="data"
-          [filterable]="true"
           textField="text"
           kendoTreeViewExpandable
           kendoTreeViewHierarchyBinding
@@ -27,14 +26,14 @@
           [kendoTreeViewCheckable]="checkableSettings"
           class="pt-5"
         >
-          <ng-template kendoTreeViewNodeTemplate let-dataItem>
+          <!--<ng-template kendoTreeViewNodeTemplate let-dataItem>
             <input
               class="k-checkbox"
               type="checkbox"
               *ngIf="!hasChildren(dataItem)"
             />
             <span class="k-in">{{dataItem.text}}</span>
-          </ng-template>
+          </ng-template>-->
         </kendo-treeview>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 right-div">
@@ -60,3 +59,5 @@
 </kendo-dialog>
 
 <app-tgk-lookup-tree></app-tgk-lookup-tree>
+
+<!-- [filterable]="true" -->

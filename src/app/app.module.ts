@@ -9,6 +9,9 @@ import { HelloComponent } from "./hello.component";
 import { TreeViewModule } from "@progress/kendo-angular-treeview";
 import { ButtonsModule } from "@progress/kendo-angular-buttons";
 import { DialogsModule } from "@progress/kendo-angular-dialog";
+import { LabelModule } from '@progress/kendo-angular-label';
+import { InputsModule } from '@progress/kendo-angular-inputs';
+
 import { TgkLookupTreeComponent } from './tgk-lookup-tree/tgk-lookup-tree.component';
 import { LookupModalComponent } from './tgk-lookup-tree/lookup-modal/lookup-modal.component';
 import { LookupTreeComponent } from './tgk-lookup-tree/lookup-modal/lookup-tree/lookup-tree.component';
@@ -22,7 +25,9 @@ import { LookupFieldComponent } from './tgk-lookup-tree/lookup-field/lookup-fiel
     TreeViewModule,
     BrowserAnimationsModule,
     ButtonsModule,
-    DialogsModule
+    DialogsModule,
+    LabelModule,
+    InputsModule
   ],
   declarations: [AppComponent, HelloComponent, TgkLookupTreeComponent, LookupModalComponent, LookupTreeComponent, LookupSelectionAreaComponent, LookupFieldComponent],
   bootstrap: [AppComponent]

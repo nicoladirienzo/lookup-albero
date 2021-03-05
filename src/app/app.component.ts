@@ -8,11 +8,11 @@ import { of, Observable } from "rxjs";
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-  public enableCheck = false;
+  public enableCheck = true;
   public checkChildren = true;
   public checkParents = true;
   public checkOnClick = false;
-  public checkMode: any = "multiple";
+  public checkMode: any = "single";
   public selectionMode: any = "single";
 
   public opened = true;
@@ -37,7 +37,7 @@ export class AppComponent {
   }
   public data: any[] = [
     {
-      text: "FurnitureSS",
+      text: "Furniture",
       items: [
         { text: "Tables & Chairs" },
         { text: "Sofas" },

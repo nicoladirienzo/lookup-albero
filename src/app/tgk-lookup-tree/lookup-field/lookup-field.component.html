@@ -1,2 +1,21 @@
 <!-- Componente contenente il campo dei valori selezionati ed il pulsante (tre pallini) di apertura della modale -->
 <p>lookup-field works!</p>
+<kendo-textbox
+            placeholder="Event name"
+            [clearButton]="true"
+            (valueChange)="onChange($event)"
+            (focus)="onFocus()"
+            (blur)="onBlur()"
+            (inputFocus)="inputFocus()"
+            (inputBlur)="inputBlur()">
+    <ng-template kendoTextBoxSuffixTemplate>
+        <kendo-textbox-separator></kendo-textbox-separator>
+        <button kendoButton look="clear" [icon]="'more-vertical'"></button>
+    </ng-template>
+</kendo-textbox>
+
+<!-- 
+    Per la gestione degli eventi del tasto, guida ed esempio d'uso all'indirizzo 
+    https://www.telerik.com/kendo-angular-ui/components/inputs/textbox/
+    <event-log title="Event log" [events]="events"></event-log> 
+-->
