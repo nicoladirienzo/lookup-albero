@@ -15,6 +15,8 @@ import { InputsModule } from '@progress/kendo-angular-inputs';
 import { MultiSelectModule } from '@progress/kendo-angular-dropdowns';
 
 
+import { ReactiveFormsModule } from '@angular/forms';
+import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
 
 import { TgkLookupTreeComponent } from './tgk-lookup-tree/tgk-lookup-tree.component';
 import { LookupModalComponent } from './tgk-lookup-tree/lookup-modal/lookup-modal.component';
@@ -32,7 +34,9 @@ import { LookupFieldComponent } from './tgk-lookup-tree/lookup-field/lookup-fiel
     DialogsModule,
     LabelModule,
     InputsModule,
-    MultiSelectModule
+    MultiSelectModule,
+    ReactiveFormsModule,
+    DropDownsModule
   ],
   declarations: [AppComponent, HelloComponent, TgkLookupTreeComponent, LookupModalComponent, LookupTreeComponent, LookupSelectionAreaComponent, LookupFieldComponent],
   bootstrap: [AppComponent]
