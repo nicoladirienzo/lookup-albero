@@ -1,6 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { CheckableSettings } from '@progress/kendo-angular-treeview';
-import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-lookup-modal',
@@ -8,9 +6,6 @@ import { Observable, of } from 'rxjs';
   styleUrls: ['./lookup-modal.component.css']
 })
 export class LookupModalComponent implements OnInit {
-
-
-
 
   @Output() isDialogOpenEventChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
@@ -35,6 +30,10 @@ export class LookupModalComponent implements OnInit {
   @Input()
   public treeData: any[];
 
+  /**
+   * array dei valori selezionati, inizialmente vuoto.
+   */
+  public checkedKeys: any[] = [];
 
   constructor() { }
 
@@ -44,6 +43,10 @@ export class LookupModalComponent implements OnInit {
   public close(status) {
     console.log(`Dialog result: ${status}`);
     this.isDialogOpenEventChange.emit(false);
+  }
+
+  public onTreeValueChange(changedValues: any){
+    console.log("cambio selezione lookup, componente padre", changedValues);
   }
 
 }

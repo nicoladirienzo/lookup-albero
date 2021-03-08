@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, NgModule, OnInit } from '@angular/core';
+import { MultiSelectComponent } from '@progress/kendo-angular-dropdowns';
+
 
 @Component({
   selector: 'app-lookup-selection-area',
@@ -6,6 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lookup-selection-area.component.css']
 })
 export class LookupSelectionAreaComponent implements OnInit {
+
+
+
+  @Input()
+  public selectedValues: any[];
 
   constructor() { }
 

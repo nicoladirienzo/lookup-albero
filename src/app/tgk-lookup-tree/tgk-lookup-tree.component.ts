@@ -1,6 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CheckableSettings } from '@progress/kendo-angular-treeview';
-import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-tgk-lookup-tree',

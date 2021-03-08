@@ -1,6 +1,4 @@
 import { Component, VERSION } from "@angular/core";
-import { CheckableSettings } from "@progress/kendo-angular-treeview";
-import { of, Observable } from "rxjs";
 
 @Component({
   selector: "my-app",
@@ -11,7 +9,7 @@ export class AppComponent {
 
 
 
-  public enableCheck = false;
+  public enableCheck = true;
 
   public checkChildren = true;
 

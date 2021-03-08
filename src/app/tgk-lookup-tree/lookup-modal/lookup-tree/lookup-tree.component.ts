@@ -30,6 +30,9 @@ export class LookupTreeComponent implements OnInit {
   @Input()
   public data: any[];
 
+  @Input()
+  public checkedKeys: any[] = ["www"];
+
   public get checkableSettings(): CheckableSettings {
     return {
       checkChildren: this.checkChildren,
@@ -45,6 +48,10 @@ export class LookupTreeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  changeEvent(event:any){
+    console.log("cambiata selezione:",event);
   }
 
  
