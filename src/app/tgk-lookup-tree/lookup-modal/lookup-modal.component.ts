@@ -1,4 +1,7 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { select, Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { LookupTreeComponent } from './lookup-tree/lookup-tree.component';
 
 @Component({
   selector: 'app-lookup-modal',
@@ -29,14 +32,13 @@ export class LookupModalComponent implements OnInit {
 
   @Input()
   public treeData: any[];
-
-  /**
-   * array dei valori selezionati, inizialmente vuoto.
-   */
-  public checkedKeys: any[] = [];
+  
   public allowCustom = true;
   
   public listItems: Array<string> = ['Baseball', 'Basketball', 'Cricket', 'Field Hockey', 'Football', 'Table Tennis', 'Tennis', 'Volleyball'];
+
+  // valori attualmente selezionati. Sono passati sia alla lookupTree che all'area di selezione
+  public checkedValues: any[] = [];
 
   constructor() { }
 
@@ -48,8 +50,9 @@ export class LookupModalComponent implements OnInit {
     this.isDialogOpenEventChange.emit(false);
   }
 
-  public onTreeValueChange(changedValues: any){
+  public onTreeValueChange(changedValues: any[]){
     console.log("cambio selezione lookup, componente padre", changedValues);
+    this.checkedValues = changedValues;
   }
 
 }

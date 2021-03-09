@@ -27,15 +27,15 @@
           [checkMode]="checkMode"
           [selectionMode]="selectionMode"
           [data]="treeData"
-          [checkedKeys]="checkedKeys"
+          [checkedKeys]="checkedValues"
+          (checkedSelectionChanged)="onTreeValueChange($event)"
         ></app-lookup-tree>
       </div>
 
-      <p>value checked: {{checkedKeys}}</p>
-
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 right-div">
         <app-lookup-selection-area
-        [selectedValues]="checkedKeys">
+        (checkedSelectionChanged)="onTreeValueChange($event)"
+        [selectedValues]="checkedValues"> 
 
 
         </app-lookup-selection-area>

@@ -1,5 +1,3 @@
-
 <!-- Componente che contiene l'area di selezione. -->
-
-<kendo-multiselect  [(ngModel)]="selectedValues"
+<kendo-multiselect  [(ngModel)]="selectedValues" (valueChange)="onRemoveItem($event)"
 ></kendo-multiselect>

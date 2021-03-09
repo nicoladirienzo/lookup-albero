@@ -7,7 +7,10 @@ childrenField="items"
 class="pt-5"
 kendoTreeViewExpandable
 kendoTreeViewHierarchyBinding
+(change)="onSelectItem($event)"
 [(checkedKeys)]="checkedKeys"
+[checkBy]="'text'"
+
 >
   <!-- <ng-template kendoTreeViewNodeTemplate let-dataItem>
     <input class="k-checkbox" type="checkbox" *ngIf="!hasChildren(dataItem)" />
@@ -15,4 +18,4 @@ kendoTreeViewHierarchyBinding
   </ng-template> -->
 </kendo-treeview>
 
-<p>valori cecchati: {{checkedKeys.join(",")}}</p>
+<!-- <p>valori cecchati: {{checkedKeys.join(",")}}</p> -->

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { CheckableSettings } from '@progress/kendo-angular-treeview';
 
 @Component({
@@ -31,7 +31,11 @@ export class LookupTreeComponent implements OnInit {
   public data: any[];
 
   @Input()
-  public checkedKeys: any[] = ["www"];
+  public checkedKeys: any[];
+
+  @Output() checkedSelectionChanged: EventEmitter<any[]> = new EventEmitter<any[]>();
+
+
 
   public get checkableSettings(): CheckableSettings {
     return {
@@ -50,8 +54,9 @@ export class LookupTreeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  changeEvent(event:any){
-    console.log("cambiata selezione:",event);
+  // listener lanciato alla selezione di un nuovo elemento dell'albero
+  onSelectItem(event:any){
+    this.checkedSelectionChanged.emit(this.checkedKeys)
   }
 
  

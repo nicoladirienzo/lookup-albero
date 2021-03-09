@@ -1,4 +1,4 @@
-import { Component, Input, NgModule, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, NgModule, OnInit, Output } from '@angular/core';
 import { MultiSelectComponent } from '@progress/kendo-angular-dropdowns';
 
 
@@ -14,9 +14,16 @@ export class LookupSelectionAreaComponent implements OnInit {
   @Input()
   public selectedValues: any[];
 
+  @Output() checkedSelectionChanged: EventEmitter<any[]> = new EventEmitter<any[]>();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onRemoveItem(event:any){
+    console.log("rimozione elemento lista , nuova lista: ", this.selectedValues)
+    this.checkedSelectionChanged.emit(this.selectedValues)
   }
 
 }

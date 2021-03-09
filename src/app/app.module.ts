@@ -23,6 +23,10 @@ import { LookupModalComponent } from './tgk-lookup-tree/lookup-modal/lookup-moda
 import { LookupTreeComponent } from './tgk-lookup-tree/lookup-modal/lookup-tree/lookup-tree.component';
 import { LookupSelectionAreaComponent } from './tgk-lookup-tree/lookup-modal/lookup-selection-area/lookup-selection-area.component';
 import { LookupFieldComponent } from './tgk-lookup-tree/lookup-field/lookup-field.component';
+import { StoreModule } from "@ngrx/store";
+import { EffectsModule } from '@ngrx/effects';
+
+import { ReactiveComponentModule } from '@ngrx/component';
 
 @NgModule({
   imports: [
@@ -36,9 +40,10 @@ import { LookupFieldComponent } from './tgk-lookup-tree/lookup-field/lookup-fiel
     InputsModule,
     MultiSelectModule,
     ReactiveFormsModule,
+    ReactiveComponentModule,
     DropDownsModule
   ],
   declarations: [AppComponent, HelloComponent, TgkLookupTreeComponent, LookupModalComponent, LookupTreeComponent, LookupSelectionAreaComponent, LookupFieldComponent],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
