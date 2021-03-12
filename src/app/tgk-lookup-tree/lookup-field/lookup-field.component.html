@@ -17,22 +17,19 @@
 
 
 <!-- PROVA CON COMPONENTE DI SELEZIONE CARD. -->
-<div class="row col-12 mt-0 ml-0 mr-0 mb-2 p-0">
-    <!-- <div class="column"> -->
-        <div class="input-group">
-        <kendo-multiselect [(ngModel)]="checkedValues" (valueChange)="onRemoveItem($event)"
-            placeholder="Insert scenario" resizable="auto" flow="horizontal">
+<div class="row col-4 mt-0 ml-0 mr-0 mb-2 p-0">
+    <div class="column openDialogButton" id="multiSelectField">
+        <kendo-multiselect [(ngModel)]="checkedValues" (valueChange)="onRemoveItem($event)" (open)="onOpen($event)" 
+             resizable="auto" flow="horizontal">
 
         </kendo-multiselect>
 
-    <!-- </div> -->
+    </div>
+    <div class="column openDialogButton">
 
-    <!-- <div class="column"> -->
-        <div class="input-group-append">
+        <!-- <div class="input-group-append"> -->
 
-        <button kendoButton [look]="'clear'" [icon]="'more-horizontal'" (click)="open()"></button>
-        </div>
-    <!-- </div> -->
+        <button kendoButton [look]="'clear'" [icon]="'more-horizontal'" (click)="open()" id="openDialogButton"></button>
     </div>
 </div>
 

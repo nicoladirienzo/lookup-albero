@@ -1,11 +1,12 @@
-import { Component, EventEmitter, Input, NgModule, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, NgModule, OnInit, Output, ViewEncapsulation } from '@angular/core';
 import { MultiSelectComponent } from '@progress/kendo-angular-dropdowns';
 
 
 @Component({
   selector: 'app-lookup-selection-area',
   templateUrl: './lookup-selection-area.component.html',
-  styleUrls: ['./lookup-selection-area.component.css']
+  styleUrls: ['./lookup-selection-area.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class LookupSelectionAreaComponent implements OnInit {
 
@@ -16,9 +17,17 @@ export class LookupSelectionAreaComponent implements OnInit {
 
   @Output() checkedSelectionChanged: EventEmitter<any[]> = new EventEmitter<any[]>();
 
+  public isOpenDisabled: boolean = true;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  public onOpen(event: any): void {
+    if (this.isOpenDisabled) {
+        event.preventDefault();
+    }
   }
 
   onRemoveItem(event:any){

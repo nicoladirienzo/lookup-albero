@@ -1,3 +1,15 @@
 kendo-textbox {
     margin-bottom: 20px;
 }
+
+
+.openDialogButton{
+    border: 1px solid #e7e7e7;
+}
+
+#multiSelectField{
+    width: 400px;
+    min-height:40px;
+    max-height: 150px;
+    overflow-y: auto;
+}

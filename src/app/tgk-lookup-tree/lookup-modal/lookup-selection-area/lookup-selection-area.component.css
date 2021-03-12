@@ -1,0 +1,19 @@
+
+  .k-multiselect-wrap{
+    margin-top: 5px;
+  }
+
+  .k-multiselect .k-multiselect-wrap{
+    border-radius: 0px;
+    border-color: #ffffff;
+  }
+  .k-button{
+    background-color:  #a4cdee !important;
+    background-image: none;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 14px;
+  }
+  .k-button:hover{
+    background-color:  #74b8ef !important;
+    background-image: none;
+  }

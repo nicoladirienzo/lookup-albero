@@ -9,7 +9,7 @@ import { HelloComponent } from "./hello.component";
 import { TreeViewModule } from "@progress/kendo-angular-treeview";
 
 import { ButtonsModule } from "@progress/kendo-angular-buttons";
-import { DialogsModule } from "@progress/kendo-angular-dialog";
+import { DialogsModule, WindowModule } from "@progress/kendo-angular-dialog";
 import { LabelModule } from '@progress/kendo-angular-label';
 import { InputsModule } from '@progress/kendo-angular-inputs';
 import { MultiSelectModule } from '@progress/kendo-angular-dropdowns';
@@ -41,7 +41,8 @@ import { ReactiveComponentModule } from '@ngrx/component';
     MultiSelectModule,
     ReactiveFormsModule,
     ReactiveComponentModule,
-    DropDownsModule
+    DropDownsModule,
+    WindowModule
   ],
   declarations: [AppComponent, HelloComponent, TgkLookupTreeComponent, LookupModalComponent, LookupTreeComponent, LookupSelectionAreaComponent, LookupFieldComponent],
   bootstrap: [AppComponent]

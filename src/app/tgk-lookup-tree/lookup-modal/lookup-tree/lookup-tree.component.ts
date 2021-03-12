@@ -49,17 +49,25 @@ export class LookupTreeComponent implements OnInit {
     };
   }
 
+  //public children = (dataItem: any): any[] => of(dataItem.items);
+
   public hasChildren = (dataItem: any): boolean => !!dataItem.items;
 
-  constructor() { }
+  public expanded = true;
+
+  constructor() { 
+  }
 
   ngOnInit(): void {
   }
 
+  
   // listener lanciato alla selezione di un nuovo elemento dell'albero
   onSelectItem(event:any){
     this.checkedSelectionChanged.emit(this.checkedKeys)
   }
+
+  
 
 
 }

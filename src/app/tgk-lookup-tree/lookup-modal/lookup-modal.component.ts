@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild, ViewEncapsulation } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { LookupTreeComponent } from './lookup-tree/lookup-tree.component';
@@ -6,7 +6,8 @@ import { LookupTreeComponent } from './lookup-tree/lookup-tree.component';
 @Component({
   selector: 'app-lookup-modal',
   templateUrl: './lookup-modal.component.html',
-  styleUrls: ['./lookup-modal.component.css']
+  styleUrls: ['./lookup-modal.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class LookupModalComponent implements OnInit {
 
@@ -49,15 +50,26 @@ export class LookupModalComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public opened = true;
+
+  public open() {
+    this.isDialogOpenEventChange.emit(true);
+    this.opened = true;
+  }
+
   public closeOnCancel(status) {
     console.log(`Dialog result: ${status}`);
     this.isDialogOpenEventChange.emit(false);
+    this.opened = false;
+
   }
 
   public closeOnConfirm(status) {
     console.log(`Dialog result: ${status}`);
     this.isDialogOpenEventChange.emit(false);
     this.checkedValueChange.emit(this.checkedValues);
+    this.opened = false;
+
   }
 
   public onTreeValueChange(changedValues: any[]){

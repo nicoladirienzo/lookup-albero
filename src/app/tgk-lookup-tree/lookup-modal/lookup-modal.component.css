@@ -1,11 +1,13 @@
   .left-div {
-    border: 1px solid #afafaf;
+    border-right: 1px solid #afafaf;
     padding-left: 5px;
     padding-right: 5px;
   }
   
   .right-div {
-    border: 1px solid #afafaf;
+    border-left: 1px solid #afafaf;
+    padding-left: 5px;
+    padding-right: 5px;
   }
   .divStyle {
     min-height: 350px;
@@ -20,16 +22,33 @@
   }
   
   .bt-default {
-    margin: 5px;
+    /*margin: 5px;
     width: 70px;
     height: 30px;
     font-size: 12px;
     background-color: #0071c8;
     color: #ffffff;
-    border: #0071c8;
+    border: #0071c8;*/
+    font-family: 'Fira Sans';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0.75px;
+    text-align: center;
+    color: white;
+    background-color: #007AC3;
+    padding: 8px 16px 8px 16px;
+    border: #007AC3;
+    min-width: 74px;
+    margin-right:16px;
+  }
+  .bt-default:hover {
+    background-color: #003D61; 
+    border: #003D61; 
   }
   .btn-del {
-    margin: 5px;
+    /*margin: 5px;
     width: 70px;
     height: 30px;
     font-size: 12px;
@@ -37,9 +56,27 @@
     color: #0071c8;
     border: #ffffff;
     font-weight: 600;
+    text-decoration: underline;*/
+    font-family: 'Fira Sans';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0.75px;
+    text-align: center;
+    color: #005B92;
+    background-color: transparent;
+    padding: 8px 16px 8px 16px;
     text-decoration: underline;
+    border: none;
+    min-width: 74px;
+    margin-right:16px;
   }
   
+  .btn-del:hover{
+    color: #003D61;
+  }
+
   .k-dialog-buttongroup {
     border: none;
   }
@@ -56,8 +93,32 @@
     border-radius: 0px !important;
   }
 
-  .k-input{
-    padding: 0.15rem 0.75rem !important;
-    /* padding-top: 0.15rem !important;
-    padding-bottom: 0.15rem !important; */
+  .k-dialog-titlebar{
+    color: #333333;
+    background-color: #ffffff !important;
   }
+
+  .k-window-titlebar{
+    border-color:#ffffff;
+  }
+
+  .k-window-content{
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+  }
+
+  .k-window-titlebar{
+    padding-bottom:5px;
+    padding-left:10px;
+    padding-right:5px;
+  }
+
+  .k-window-title{
+    padding-bottom:5px;
+  }
+
+ 
+
+ 

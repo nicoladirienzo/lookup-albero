@@ -15,6 +15,8 @@ export class LookupFieldComponent implements OnInit {
 
   @Input()
   public checkedValues: any[];
+  
+  isOpenDisabled: boolean = true;
 
   constructor() { }
 
@@ -48,6 +50,12 @@ export class LookupFieldComponent implements OnInit {
 
   public open() {
     this.isDialogOpenEventChange.emit(true);
+  }
+
+  public onOpen(event: any): void {
+    if (this.isOpenDisabled) {
+        event.preventDefault();
+    }
   }
 
   onRemoveItem(event:any){
