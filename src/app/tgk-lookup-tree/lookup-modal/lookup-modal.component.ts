@@ -12,6 +12,8 @@ export class LookupModalComponent implements OnInit {
 
   @Output() isDialogOpenEventChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
+  @Output() checkedValueChange: EventEmitter<any[]> = new EventEmitter<any[]>();
+
   @Input()
   public enableCheck;
 
@@ -33,21 +35,29 @@ export class LookupModalComponent implements OnInit {
   @Input()
   public treeData: any[];
   
+  // valori attualmente selezionati. Sono passati sia alla lookupTree che all'area di selezione
+  @Input()
+  public checkedValues: any[];
+
   public allowCustom = true;
   
   public listItems: Array<string> = ['Baseball', 'Basketball', 'Cricket', 'Field Hockey', 'Football', 'Table Tennis', 'Tennis', 'Volleyball'];
 
-  // valori attualmente selezionati. Sono passati sia alla lookupTree che all'area di selezione
-  public checkedValues: any[] = [];
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  public close(status) {
+  public closeOnCancel(status) {
     console.log(`Dialog result: ${status}`);
     this.isDialogOpenEventChange.emit(false);
+  }
+
+  public closeOnConfirm(status) {
+    console.log(`Dialog result: ${status}`);
+    this.isDialogOpenEventChange.emit(false);
+    this.checkedValueChange.emit(this.checkedValues);
   }
 
   public onTreeValueChange(changedValues: any[]){

@@ -11,6 +11,10 @@ export class LookupFieldComponent implements OnInit {
 
   @Output() isDialogOpenEventChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
+  @Output() checkedSelectionChanged: EventEmitter<any[]> = new EventEmitter<any[]>();
+
+  @Input()
+  public checkedValues: any[];
 
   constructor() { }
 
@@ -45,4 +49,11 @@ export class LookupFieldComponent implements OnInit {
   public open() {
     this.isDialogOpenEventChange.emit(true);
   }
+
+  onRemoveItem(event:any){
+    console.log("rimozione elemento lista , nuova lista: ", this.checkedValues)
+    this.checkedSelectionChanged.emit(this.checkedValues)
+  }
+
+
 }

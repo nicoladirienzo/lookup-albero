@@ -5,12 +5,15 @@ tutte le parametrizzazioni -->
 
 <app-lookup-field
   *ngIf="!opened"
+  [checkedValues]="checkedValues"
+  (checkedSelectionChanged)="onCheckedSelectionChange($event)"
   (isDialogOpenEventChange)="onDialogOpenOrClose($event)"
 ></app-lookup-field>
 
 <app-lookup-modal
   *ngIf="opened"
   (isDialogOpenEventChange)="onDialogOpenOrClose($event)"
+  (checkedValueChange)="onCheckedSelectionChange($event)"
   [enableCheck]="enableCheck"
   [checkChildren]="checkChildren"
   [checkParents]="checkParents"
@@ -18,4 +21,5 @@ tutte le parametrizzazioni -->
   [checkMode]="checkMode"
   [selectionMode]="selectionMode"
   [treeData]="treeData"
+  [checkedValues]="checkedValues"
 ></app-lookup-modal>

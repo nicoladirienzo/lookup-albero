@@ -1,10 +1,12 @@
-import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output, ViewChild, ViewEncapsulation } from '@angular/core';
 import { CheckableSettings } from '@progress/kendo-angular-treeview';
 
 @Component({
   selector: 'app-lookup-tree',
   templateUrl: './lookup-tree.component.html',
-  styleUrls: ['./lookup-tree.component.css']
+  styleUrls: ['./lookup-tree.component.css'],
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LookupTreeComponent implements OnInit {
 
@@ -58,8 +60,6 @@ export class LookupTreeComponent implements OnInit {
   onSelectItem(event:any){
     this.checkedSelectionChanged.emit(this.checkedKeys)
   }
-
- 
 
 
 }

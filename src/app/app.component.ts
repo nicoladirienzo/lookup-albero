@@ -37,6 +37,26 @@ export class AppComponent {
         { text: "Curtains & Blinds" },
         { text: "Carpets" }
       ]
+    },
+
+    {
+      text: "Vehicles",
+      items: [
+        { text: "Car",
+          items:[
+            { text : "Ferrari"},
+            { text : "Alfa Romeo"},
+            { text : "Volvo"},
+            { text : "Dacia"},
+          ]
+       },
+        { text: "Van" },
+        { text: "Truck" ,
+        items:[
+          { text : "Scania"},
+        ]
+      }
+      ]
     }
   ];
 

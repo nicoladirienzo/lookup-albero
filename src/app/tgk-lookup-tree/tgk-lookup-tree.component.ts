@@ -4,6 +4,7 @@ import { Component, Input, OnInit } from '@angular/core';
   selector: 'app-tgk-lookup-tree',
   templateUrl: './tgk-lookup-tree.component.html',
   styleUrls: ['./tgk-lookup-tree.component.css']
+  
 })
 export class TgkLookupTreeComponent implements OnInit {
 
@@ -29,6 +30,8 @@ export class TgkLookupTreeComponent implements OnInit {
   @Input()
   public treeData: any[];
 
+  // Valori attualmente selezionati. Vengono passati alla modale e sono restituiti da quest'ultima alla sua chiusura su 'Ok'
+  public checkedValues: any[] = [];
 
   public opened = false;
 
@@ -39,6 +42,11 @@ export class TgkLookupTreeComponent implements OnInit {
 
   onDialogOpenOrClose(eventValue: boolean): void {
     this.opened = eventValue;
+  }
+
+  onCheckedSelectionChange(newSelectionChange: any[]):void{
+    this.checkedValues = newSelectionChange;
+    console.log("NUOVA SELEZIONE COMPONENTE PARENT:"+this.checkedValues);
   }
 
 

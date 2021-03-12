@@ -54,7 +54,7 @@
     <!--<button kendoButton (click)="close('no')">No</button>
           <button kendoButton (click)="close('yes')" 
       primary="true">Yes</button>-->
-    <button class="btn-del" (click)="close('no')">Cancel</button>
-    <button class="bt-default" (click)="close('yes')" primary="true">OK</button>
+    <button class="btn-del" (click)="closeOnCancel('no')">Cancel</button>
+    <button class="bt-default" (click)="closeOnConfirm('yes')" primary="true">OK</button>
   </kendo-dialog-actions>
 </kendo-dialog>

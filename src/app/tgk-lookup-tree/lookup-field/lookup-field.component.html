@@ -4,21 +4,37 @@
 <!-- <button kendoButton (click)="open()">Open dialog</button> -->
 
 
-<kendo-textarea [style.marginBottom.px]="10"
-            placeholder="Insert scenario"
-            resizable="auto"
-            flow="horizontal"
-            (valueChange)="onChange($event)"
-            (focus)="onFocus()"
-            (blur)="onBlur()"
-            (inputFocus)="onInputFocus()"
-            (inputBlur)="onInputBlur()">
+<!-- <kendo-textarea [style.marginBottom.px]="10" placeholder="Insert scenario" resizable="auto" flow="horizontal"
+    (valueChange)="onChange($event)" (focus)="onFocus()" (blur)="onBlur()" (inputFocus)="onInputFocus()"
+    (inputBlur)="onInputBlur()">
     <kendo-textarea-suffix>
         <kendo-input-separator class="k-text-base"></kendo-input-separator>
         <button kendoButton [look]="'clear'" [icon]="'more-horizontal'" (click)="open()"></button>
     </kendo-textarea-suffix>
-</kendo-textarea>
+</kendo-textarea> -->
 
+
+
+
+<!-- PROVA CON COMPONENTE DI SELEZIONE CARD. -->
+<div class="row col-12 mt-0 ml-0 mr-0 mb-2 p-0">
+    <!-- <div class="column"> -->
+        <div class="input-group">
+        <kendo-multiselect [(ngModel)]="checkedValues" (valueChange)="onRemoveItem($event)"
+            placeholder="Insert scenario" resizable="auto" flow="horizontal">
+
+        </kendo-multiselect>
+
+    <!-- </div> -->
+
+    <!-- <div class="column"> -->
+        <div class="input-group-append">
+
+        <button kendoButton [look]="'clear'" [icon]="'more-horizontal'" (click)="open()"></button>
+        </div>
+    <!-- </div> -->
+    </div>
+</div>
 
 <!-- 
     Gestione eventi del bottone presente nella Kendo-textarea esempio d'uso all'indirizzo:     
