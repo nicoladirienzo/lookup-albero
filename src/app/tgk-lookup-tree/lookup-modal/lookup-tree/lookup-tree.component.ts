@@ -1,10 +1,12 @@
-import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild, ViewEncapsulation } from '@angular/core';
 import { CheckableSettings } from '@progress/kendo-angular-treeview';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-lookup-tree',
   templateUrl: './lookup-tree.component.html',
-  styleUrls: ['./lookup-tree.component.css']
+  styleUrls: ['./lookup-tree.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class LookupTreeComponent implements OnInit {
 
@@ -47,19 +49,25 @@ export class LookupTreeComponent implements OnInit {
     };
   }
 
+  //public children = (dataItem: any): any[] => of(dataItem.items);
+
   public hasChildren = (dataItem: any): boolean => !!dataItem.items;
 
-  constructor() { }
+  public expanded = true;
+
+  constructor() { 
+  }
 
   ngOnInit(): void {
   }
 
+  
   // listener lanciato alla selezione di un nuovo elemento dell'albero
   onSelectItem(event:any){
     this.checkedSelectionChanged.emit(this.checkedKeys)
   }
 
- 
+  
 
 
 }

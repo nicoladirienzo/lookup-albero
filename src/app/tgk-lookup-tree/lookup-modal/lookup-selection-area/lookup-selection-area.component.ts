@@ -1,11 +1,12 @@
-import { Component, EventEmitter, Input, NgModule, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, NgModule, OnInit, Output, ViewEncapsulation } from '@angular/core';
 import { MultiSelectComponent } from '@progress/kendo-angular-dropdowns';
 
 
 @Component({
   selector: 'app-lookup-selection-area',
   templateUrl: './lookup-selection-area.component.html',
-  styleUrls: ['./lookup-selection-area.component.css']
+  styleUrls: ['./lookup-selection-area.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class LookupSelectionAreaComponent implements OnInit {
 

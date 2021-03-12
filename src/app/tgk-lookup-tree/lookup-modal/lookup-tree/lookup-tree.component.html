@@ -1,4 +1,8 @@
 <!-- Componente che contiene l'albero popolato da tutti i dati selezionabili. -->
+<!-- <div>  
+  <button class="btn-light" (click)="expanded = true"><i class="k-icon k-i-arrow-end-down"></i> Expand all</button>
+  <button class="btn-light" (click)="expanded = false"><i class="k-icon k-i-arrow-end-up"></i> Collapse all</button>
+</div>   -->
 <kendo-treeview
 [nodes]="data"
 textField="text"
@@ -12,10 +16,10 @@ kendoTreeViewHierarchyBinding
 [checkBy]="'text'"
 
 >
-  <!-- <ng-template kendoTreeViewNodeTemplate let-dataItem>
+   <!-- <ng-template kendoTreeViewNodeTemplate let-dataItem>
     <input class="k-checkbox" type="checkbox" *ngIf="!hasChildren(dataItem)" />
     <span class="k-in">{{ dataItem.text }}</span>
-  </ng-template> -->
+  </ng-template>  -->
 </kendo-treeview>
 
 <!-- <p>valori cecchati: {{checkedKeys.join(",")}}</p> -->

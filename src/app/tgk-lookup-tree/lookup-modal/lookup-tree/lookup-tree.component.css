@@ -30,3 +30,31 @@
 .k-in {
   margin-left: 0.22rem;
 }
+
+.k-checkbox{
+  border-radius: 0px;
+}
+
+.k-treeview .k-checkbox-wrapper{
+  margin-right:3px;
+  margin-bottom:5px;
+}
+
+.k-treeview .k-in{
+  padding-left:3px;
+}
+
+.btn-light{
+  margin: 5px;
+  min-width: 70px;
+  height: 20px;
+  font-size: 12px;
+  background-color: #ffffff;
+  color: #333333;
+  border: #ffffff;
+  font-weight: 600;
+}
+
+.btn-light:hover{
+  background-color: #ffffff;
+}
