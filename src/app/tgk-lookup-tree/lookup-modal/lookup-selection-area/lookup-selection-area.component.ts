@@ -17,9 +17,17 @@ export class LookupSelectionAreaComponent implements OnInit {
 
   @Output() checkedSelectionChanged: EventEmitter<any[]> = new EventEmitter<any[]>();
 
+  public isOpenDisabled: boolean = true;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  public onOpen(event: any): void {
+    if (this.isOpenDisabled) {
+        event.preventDefault();
+    }
   }
 
   onRemoveItem(event:any){
