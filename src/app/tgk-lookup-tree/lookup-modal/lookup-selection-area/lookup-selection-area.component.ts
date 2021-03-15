@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, NgModule, OnInit, Output, ViewEncapsulation } from '@angular/core';
-import { MultiSelectComponent } from '@progress/kendo-angular-dropdowns';
 
 
 @Component({
@@ -31,7 +30,6 @@ export class LookupSelectionAreaComponent implements OnInit {
   }
 
   onRemoveItem(event:any){
-    console.log("rimozione elemento lista , nuova lista: ", this.selectedValues)
     this.checkedSelectionChanged.emit(this.selectedValues)
   }
 

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { TreeModel } from './model/lookup-tree.model';
 
 @Component({
   selector: 'app-tgk-lookup-tree',
@@ -25,10 +26,7 @@ export class TgkLookupTreeComponent implements OnInit {
   public checkMode: any;
 
   @Input()
-  public selectionMode: any;
-
-  @Input()
-  public treeData: any[];
+  public treeData: TreeModel[];
 
   // Valori attualmente selezionati. Vengono passati alla modale e sono restituiti da quest'ultima alla sua chiusura su 'Ok'
   public checkedValues: any[] = [];
@@ -46,7 +44,6 @@ export class TgkLookupTreeComponent implements OnInit {
 
   onCheckedSelectionChange(newSelectionChange: any[]):void{
     this.checkedValues = newSelectionChange;
-    console.log("NUOVA SELEZIONE COMPONENTE PARENT:"+this.checkedValues);
   }
 
 
