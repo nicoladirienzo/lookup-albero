@@ -59,7 +59,6 @@ export class LookupFieldComponent implements OnInit {
   }
 
   onRemoveItem(event:any){
-    console.log("rimozione elemento lista , nuova lista: ", this.checkedValues)
     this.checkedSelectionChanged.emit(this.checkedValues)
   }
 

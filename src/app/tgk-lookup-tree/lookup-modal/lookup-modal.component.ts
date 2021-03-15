@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output, ViewChild, ViewEncapsulation } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { TreeModel } from '../model/lookup-tree.model';
 import { LookupTreeComponent } from './lookup-tree/lookup-tree.component';
 
 @Component({
@@ -31,10 +32,7 @@ export class LookupModalComponent implements OnInit {
   public checkMode: any;
 
   @Input()
-  public selectionMode: any;
-
-  @Input()
-  public treeData: any[];
+  public treeData: TreeModel[];
   
   // valori attualmente selezionati. Sono passati sia alla lookupTree che all'area di selezione
   @Input()

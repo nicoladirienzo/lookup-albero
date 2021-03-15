@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output, ViewChild, ViewEncapsulation } from '@angular/core';
 import { CheckableSettings } from '@progress/kendo-angular-treeview';
+import { TreeModel } from '../../model/lookup-tree.model';
 
 @Component({
   selector: 'app-lookup-tree',
@@ -27,10 +28,7 @@ export class LookupTreeComponent implements OnInit {
   public checkMode: any;
   
   @Input()
-  public selectionMode: any;
-
-  @Input()
-  public data: any[];
+  public data: TreeModel[];
 
   @Input()
   public checkedKeys: any[];
@@ -48,8 +46,6 @@ export class LookupTreeComponent implements OnInit {
       checkOnClick: this.checkOnClick
     };
   }
-
-  //public children = (dataItem: any): any[] => of(dataItem.items);
 
   public hasChildren = (dataItem: any): boolean => !!dataItem.items;
 

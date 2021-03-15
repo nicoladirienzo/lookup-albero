@@ -1,4 +1,8 @@
 import { Component, VERSION } from "@angular/core";
+import { checkType, TreeModel } from "./tgk-lookup-tree/model/lookup-tree.model";
+
+
+
 
 @Component({
   selector: "my-app",
@@ -9,19 +13,36 @@ export class AppComponent {
 
 
 
+  /**
+   * Determines if the checkbox feature is initially enabled. 
+   */
   public enableCheck = true;
 
-  public checkChildren = true;
+  /**
+   * Determines if the children checkboxes will get 
+   * selected when the user selects the parent checkbox. 
+   */
+  public checkChildren = false;
 
-  public checkParents = true;
-  
+  /**
+   * Determines if the parent checkbox will get 
+   * selected when the user selects all its children checkboxes.
+   */
+  public checkParents = false;
+
+  /**
+   * Specifies if clicking the node will
+   *  check or uncheck the item. 
+   */
   public checkOnClick = false;
-  
-  public checkMode: any = "multiple";
-  
-  public selectionMode: any = "single";
 
-  public treeData: any[] = [
+  /**
+   * Sets the Check Mode of the checkbox feature.
+   * (single or multiple)
+   */
+  public checkMode: checkType = "multiple";
+
+  public treeData: TreeModel[] = [
     {
       text: "Furniture",
       items: [
@@ -42,20 +63,22 @@ export class AppComponent {
     {
       text: "Vehicles",
       items: [
-        { text: "Car",
-          items:[
-            { text : "Ferrari"},
-            { text : "Alfa Romeo"},
-            { text : "Volvo"},
-            { text : "Dacia"},
+        {
+          text: "Car",
+          items: [
+            { text: "Ferrari" },
+            { text: "Alfa Romeo" },
+            { text: "Volvo" },
+            { text: "Dacia" },
           ]
-       },
+        },
         { text: "Van" },
-        { text: "Truck" ,
-        items:[
-          { text : "Scania"},
-        ]
-      }
+        {
+          text: "Truck",
+          items: [
+            { text: "Scania" },
+          ]
+        }
       ]
     }
   ];
