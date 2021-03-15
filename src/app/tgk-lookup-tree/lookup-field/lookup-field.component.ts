@@ -1,9 +1,10 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-lookup-field',
   templateUrl: './lookup-field.component.html',
-  styleUrls: ['./lookup-field.component.css']
+  styleUrls: ['./lookup-field.component.css'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class LookupFieldComponent implements OnInit {
 

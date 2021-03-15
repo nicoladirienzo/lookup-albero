@@ -11,9 +11,9 @@ export class AppComponent {
 
   public enableCheck = true;
 
-  public checkChildren = true;
+  public checkChildren = false;
 
-  public checkParents = true;
+  public checkParents = false;
   
   public checkOnClick = false;
   

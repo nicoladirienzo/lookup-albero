@@ -13,3 +13,12 @@ kendo-textbox {
     max-height: 150px;
     overflow-y: auto;
 }
+
+#dialogButton{
+    border: 1px solid #e7e7e7 !important;
+}
+
+.k-multiselect-wrap .k-floatwrap{
+    border: 1px solid #ffffff !important;
+}
+
