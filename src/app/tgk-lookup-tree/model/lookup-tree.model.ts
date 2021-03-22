@@ -10,6 +10,9 @@ export type checkType = 'single' | 'multiple'
  * È anche il valore che verrà selezionato ed inserito nella lista degli elementi
  * selezionati.
  * 
+ * @field id - rappresenta l'id del nodo è univoco per definizione; 
+ * non viene visualizzato a video. 
+ * 
  * @field items - rappresenta la lista dei figli del nodo
  * ognuno dei quali è  a sua volta un TreeModel.
  * Per le foglie questo campo sarà nullo.
@@ -17,5 +20,6 @@ export type checkType = 'single' | 'multiple'
  */
 export interface TreeModel {
     text: string;
+    id: string;
     items?: TreeModel[];
 }

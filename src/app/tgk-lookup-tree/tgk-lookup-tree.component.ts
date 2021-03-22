@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { TreeModel } from './model/lookup-tree.model';
 
 @Component({
-  selector: 'app-tgk-lookup-tree',
+  selector: 'tgk-lookup-tree',
   templateUrl: './tgk-lookup-tree.component.html',
   styleUrls: ['./tgk-lookup-tree.component.css']
   

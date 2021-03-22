@@ -45,38 +45,64 @@ export class AppComponent {
   public treeData: TreeModel[] = [
     {
       text: "Furniture",
+      id:"1",
       items: [
-        { text: "Tables & Chairs" },
-        { text: "Sofas" },
-        { text: "Occasional Furniture" }
+        { text: "Tables & Chairs",
+        id:"2"
+      },
+        { text: "Sofas" ,
+        id:"3"
+      },
+        { text: "Occasional Furniture",
+        id:"4"
+      }
       ]
     },
     {
       text: "Decor",
+      id:"5",
+
       items: [
-        { text: "Bed Linen" },
-        { text: "Curtains & Blinds" },
-        { text: "Carpets" }
+        { text: "Bed Linen" ,
+        id:"6"
+      },
+        { text: "Curtains & Blinds",
+        id:"7"
+      },
+        { text: "Carpets",
+        id:"8"
+
+      }
       ]
     },
 
     {
       text: "Vehicles",
+      id:"9",
       items: [
         {
           text: "Car",
+          id:"10",
           items: [
-            { text: "Ferrari" },
-            { text: "Alfa Romeo" },
-            { text: "Volvo" },
-            { text: "Dacia" },
+            { text: "Ferrari" ,
+            id:"12"},
+            { text: "Alfa Romeo",
+            id:"13" },
+            { text: "Volvo" ,
+            id:"14"},
+            { text: "Dacia",
+            id:"15" },
           ]
         },
-        { text: "Van" },
+        { text: "Van",
+        id:"16" },
         {
           text: "Truck",
+          id:"11",
+
           items: [
-            { text: "Scania" },
+            { text: "Scania",
+            id:"17" },
           ]
         }
       ]
