@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { TreeModel } from '../model/lookup-tree.model';
 import { LookupTreeComponent } from './lookup-tree/lookup-tree.component';
 
-@Component({
+@Component({ 
   selector: 'app-lookup-modal',
   templateUrl: './lookup-modal.component.html',
   styleUrls: ['./lookup-modal.component.css'],
