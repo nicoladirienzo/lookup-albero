@@ -82,6 +82,11 @@ export class LookupModalComponent implements OnInit, OnDestroy {
     this.opened = true;
   }
 
+  public close() {
+    this.isDialogOpenEventChange.emit(false);
+    this.opened = false;
+  }
+
   public closeOnCancel(status) {
     console.log(`Dialog result: ${status}`);
     this.isDialogOpenEventChange.emit(false);
@@ -95,6 +100,21 @@ export class LookupModalComponent implements OnInit, OnDestroy {
     this.checkedValueChange.emit(this.checkedValues);
     this.opened = false;
 
+  }
+
+  //Cattura la selezione di un nuovo elemento della combobox, ad esempio se mi muovo con le frecce della tastiera 
+  //tra gli elementi della combobox senza premere invio.
+  public selectionChange(value: any): void {
+    console.log('Hai selezionato:', value);
+  }
+
+  //Cattura il cambio del valore nella combobox, quando clicco o premo invio 
+  //tra gli elementi della combobox.
+  public valueChange(value: any): void {
+    this.treeService.getChildren("root", "root", "root").subscribe(
+      (res)=> console.log('Value change', res)
+    );
+    
   }
 
   public onTreeValueChange(changedValues: any[]) {

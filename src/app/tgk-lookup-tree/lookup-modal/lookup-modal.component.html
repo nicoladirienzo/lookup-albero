@@ -14,6 +14,8 @@
           [valueField]="'id'"
           [(ngModel)]="selectedRoot"
           [allowCustom]="allowCustom" 
+          (selectionChange)="selectionChange($event)"
+          (valueChange)="valueChange($event)"
           placeholder="Original Scenarios"></kendo-combobox>
 
         <!-- Tree component -->
