@@ -14,8 +14,6 @@ import { checkType, TreeModel } from "./tgk-lookup-tree/model/lookup-tree.model"
 export class AppComponent {
 
 
-
-
   public enableCheck = true;
 
 
@@ -29,8 +27,6 @@ export class AppComponent {
 
 
   public checkMode: checkType = "multiple";
-
-  public treeData = treeData;
 
   constructor(
     public mockTreeLookupService: MockTreeLookupService 

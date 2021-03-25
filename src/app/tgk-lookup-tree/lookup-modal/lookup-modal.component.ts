@@ -32,8 +32,6 @@ export class LookupModalComponent implements OnInit, OnDestroy {
   @Input()
   public checkMode: any;
 
-  @Input()
-  public treeData: TreeModel[];
 
   @Input()
   public treeService: TgkTreeViewService;
@@ -55,6 +53,12 @@ export class LookupModalComponent implements OnInit, OnDestroy {
    * List of roots node fetched from the related service
    */
   public listRoots: Array<TreeModel> = [];
+
+  /**
+   * List of children node fetched from the related service based on 
+   * the current selectedRoot
+   */
+  public listChildren: Array<TreeModel> = [];
 
 
   constructor() { }

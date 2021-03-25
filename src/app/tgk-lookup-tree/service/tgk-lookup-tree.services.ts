@@ -10,10 +10,8 @@ import { TreeModel } from "../model/lookup-tree.model";
  * from the concrete services of the specific tree-lookup.
  * 
  */
-@Injectable()
-export abstract class TgkTreeViewService {
+export interface TgkTreeViewService {
 
-    constructor() { }
 
     /**
      * @returns - A list of the root nodes of the lookup.
@@ -21,12 +19,16 @@ export abstract class TgkTreeViewService {
      * @param params - Receives a variable list of parameters that changing based on its 
      * specific implementation.
      */
-    public abstract getRoots(...params): Observable<TreeModel[]>;
+     getRoots(...params): Observable<TreeModel[]>;
 
 
     /**
      * @returns - A list of the children nodes of the lookup related to a passed 
      * root node.
+     * 
+     * @param level - Level Of the hierarchy from which will be fetched the related childern. (ROOT - CHILDERN)
+     * 
+     * @param hierarchicalCode - Code of the hierarchy from which will be fetched the children. 
      * 
      * @param parentNodeCode - Receives a parent node from which it extracts a list of related children,
      * invoking hierarchical service.
@@ -34,5 +36,7 @@ export abstract class TgkTreeViewService {
      * @param params - Receives a variable list of parameters that changing based on its 
      * specific implementation.
      */
-    public abstract getChildren(level:string ,hierarchicalCode:string, parentNodeCode:string, ...params): Observable<TreeModel[]>;
+     getChildren(level:string , hierarchicalCode:string, parentNodeCode:string, ...args): Observable<TreeModel[]>;
+
+    
 }

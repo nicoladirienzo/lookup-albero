@@ -15,6 +15,10 @@ export class MockTreeLookupService implements TgkTreeViewService {
 
   constructor() { }
 
+  public getChildren1(): Observable<TreeModel[]> {
+    throw new Error("Method not implemented.");
+  }
+
 
     public getRoots(...params: any[]): Observable<TreeModel[]> {
         return of(treeRootData)

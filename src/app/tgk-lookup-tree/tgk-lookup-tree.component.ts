@@ -47,10 +47,6 @@ export class TgkLookupTreeComponent implements OnInit {
   @Input()
   public checkMode: any;
 
-  //TODO RIMUOVERE QUANDO I DATI SARANNO CORRETTAMENTE ESTRATTI DAL SERVIZIO PASSATO
-  @Input()
-  public treeData: TreeModel[];
-
   /**
    * Generic Tree Lookup service. A concrete service must be
    * implemented on the component that include this TgkLookupComponent and 
