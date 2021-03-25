@@ -27,6 +27,7 @@ import { StoreModule } from "@ngrx/store";
 import { EffectsModule } from '@ngrx/effects';
 
 import { ReactiveComponentModule } from '@ngrx/component';
+import { MockTreeLookupService } from "./mock.service";
 
 @NgModule({
   imports: [
@@ -45,6 +46,7 @@ import { ReactiveComponentModule } from '@ngrx/component';
     WindowModule
   ],
   declarations: [AppComponent, HelloComponent, TgkLookupTreeComponent, LookupModalComponent, LookupTreeComponent, LookupSelectionAreaComponent, LookupFieldComponent],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [MockTreeLookupService]
 })
 export class AppModule { }

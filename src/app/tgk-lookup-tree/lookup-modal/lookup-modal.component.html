@@ -5,11 +5,18 @@
   <kendo-window title="Items selection" *ngIf="opened" (close)="close()" [minWidth]="300" [width]="600">
   <div class="container">
     <div class="row">
-      <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <p>Items selection</p>
-      </div> -->
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 divStyle left-div">
-        <kendo-combobox [ngClass]="'cmbox'"  [data]="listItems" [allowCustom]="allowCustom" placeholder="Original Scenarios"></kendo-combobox>
+
+        <!-- Root nodes combobox -->
+        <kendo-combobox [ngClass]="'cmbox'"  
+          [data]="listRoots" 
+          [textField]="'text'"
+          [valueField]="'id'"
+          [(ngModel)]="selectedRoot"
+          [allowCustom]="allowCustom" 
+          placeholder="Original Scenarios"></kendo-combobox>
+
+        <!-- Tree component -->
         <app-lookup-tree
           [enableCheck]="enableCheck"
           [checkChildren]="checkChildren"
@@ -23,6 +30,8 @@
       </div>
 
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 right-div">
+
+        <!-- Selection area component -->
         <app-lookup-selection-area
         (checkedSelectionChanged)="onTreeValueChange($event)"
         [selectedValues]="checkedValues"> 

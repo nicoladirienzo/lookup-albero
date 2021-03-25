@@ -1,16 +1,17 @@
-import { Component, EventEmitter, Input, OnInit, Output, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild, ViewEncapsulation } from '@angular/core';
 import { select, Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { Observable, pipe, Subscription } from 'rxjs';
 import { TreeModel } from '../model/lookup-tree.model';
+import { TgkTreeViewService } from '../service/tgk-lookup-tree.services';
 import { LookupTreeComponent } from './lookup-tree/lookup-tree.component';
 
-@Component({ 
+@Component({
   selector: 'app-lookup-modal',
   templateUrl: './lookup-modal.component.html',
   styleUrls: ['./lookup-modal.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class LookupModalComponent implements OnInit {
+export class LookupModalComponent implements OnInit, OnDestroy {
 
   @Output() isDialogOpenEventChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
@@ -33,19 +34,41 @@ export class LookupModalComponent implements OnInit {
 
   @Input()
   public treeData: TreeModel[];
-  
+
+  @Input()
+  public treeService: TgkTreeViewService;
+
   // valori attualmente selezionati. Sono passati sia alla lookupTree che all'area di selezione
   @Input()
   public checkedValues: any[];
 
   public allowCustom = true;
-  
-  public listItems: Array<string> = ['Baseball', 'Basketball', 'Cricket', 'Field Hockey', 'Football', 'Table Tennis', 'Tennis', 'Volleyball'];
+
+  public rootNodesSubscription: Subscription;
+
+  /**
+   * Root node currently selected
+   */
+  public selectedRoot: TreeModel
+
+  /**
+   * List of roots node fetched from the related service
+   */
+  public listRoots: Array<TreeModel> = [];
 
 
   constructor() { }
 
   ngOnInit(): void {
+    if (!this.treeService) return;
+    this.rootNodesSubscription = this.treeService.getRoots().
+      subscribe(rootNodesResult => {
+        this.listRoots = rootNodesResult;
+      })
+  }
+
+  ngOnDestroy(): void {
+    this.rootNodesSubscription.unsubscribe()
   }
 
   public opened = true;
@@ -70,9 +93,13 @@ export class LookupModalComponent implements OnInit {
 
   }
 
-  public onTreeValueChange(changedValues: any[]){
+  public onTreeValueChange(changedValues: any[]) {
     console.log("cambio selezione lookup, componente padre", changedValues);
     this.checkedValues = changedValues;
   }
 
 }
+function tap(): import("rxjs").OperatorFunction<TreeModel[], unknown> {
+  throw new Error('Function not implemented.');
+}
+
