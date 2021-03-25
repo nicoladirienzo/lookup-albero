@@ -93,6 +93,18 @@ export class LookupModalComponent implements OnInit, OnDestroy {
 
   }
 
+  //Cattura la selezione di un nuovo elemento della combobox, ad esempio se mi muovo con le frecce della tastiera 
+  //tra gli elementi della combobox senza premere invio.
+  public selectionChange(value: any): void {
+    console.log('Hai selezionato:', value);
+  }
+
+  //Cattura il cambio del valore nella combobox, quando clicco o premo invio 
+  //tra gli elementi della combobox.
+  public valueChange(value: any): void {
+    console.log('Value change', value);
+  }
+
   public onTreeValueChange(changedValues: any[]) {
     console.log("cambio selezione lookup, componente padre", changedValues);
     this.checkedValues = changedValues;
