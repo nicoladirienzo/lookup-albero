@@ -38,5 +38,4 @@ export interface TgkTreeViewService {
      */
      getChildren(level:string , hierarchicalCode:string, parentNodeCode:string, ...args): Observable<TreeModel[]>;
 
-    
 }

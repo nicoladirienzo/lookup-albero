@@ -68,6 +68,11 @@ export class LookupModalComponent implements OnInit, OnDestroy {
     this.rootNodesSubscription = this.treeService.getRoots().
       subscribe(rootNodesResult => {
         this.listRoots = rootNodesResult;
+        // In the case there is only one root node, it will be automatically selected
+        if (this.listRoots.length === 1) {
+          this.selectedRoot = this.listRoots[0]
+          this.valueChange(this.selectedRoot);
+        }
       })
   }
 
@@ -104,17 +109,23 @@ export class LookupModalComponent implements OnInit, OnDestroy {
 
   //Cattura la selezione di un nuovo elemento della combobox, ad esempio se mi muovo con le frecce della tastiera 
   //tra gli elementi della combobox senza premere invio.
-  public selectionChange(value: any): void {
+  public selectionChange(value: TreeModel): void {
     console.log('Hai selezionato:', value);
   }
 
   //Cattura il cambio del valore nella combobox, quando clicco o premo invio 
   //tra gli elementi della combobox.
-  public valueChange(value: any): void {
-    this.treeService.getChildren("root", "root", "root").subscribe(
-      (res)=> console.log('Value change', res)
-    );
-    
+  public valueChange(value: TreeModel): void {
+    this.listChildren = []
+    if (value) {
+      console.log('Hai cambiato:', value);
+
+      this.treeService.getChildren("root", "root", "root").subscribe(
+        (childrenRes) => {
+          this.listChildren = childrenRes;
+        }
+      );
+    }
   }
 
   public onTreeValueChange(changedValues: any[]) {

@@ -24,6 +24,20 @@ export const treeRootData: TreeModel[] = [
 ]
 
 /**
+ * Mock data that contains a single root node.
+ */
+ export const singleTreeRootData: TreeModel[] = [
+  {
+    text: "OnlyOne",
+    id: "1",
+    hasChildren: true
+  },
+
+]
+
+
+
+/**
  * Mock data that contains the complete tree structure.
  */
 export const treeData: TreeModel[] = [
