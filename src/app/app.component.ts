@@ -1,7 +1,6 @@
 import { Component, VERSION } from "@angular/core";
-import { treeData } from "./mock.data";
 import { MockTreeLookupService } from "./mock.service";
-import { checkType, TreeModel } from "./tgk-lookup-tree/model/lookup-tree.model";
+import { checkType, LookupRootServiceParameters} from "./tgk-lookup-tree/model/lookup-tree.model";
 
 
 
@@ -28,10 +27,25 @@ export class AppComponent {
 
   public checkMode: checkType = "multiple";
 
+  public mockTreeLookupServiceParams: LookupRootServiceParameters = {
+    dbId: "TCPM_DEMO_DEV",
+    parameter: {
+      "processCode": "BDG3",
+
+      "scenarioType": "CONSOLIDATION",
+
+      "userLimitation": "IS_VISIBLE",
+
+      "mustBeActiveScenarios": true,
+
+      "mustReadBlockedScenarioPeriods": true
+    }
+  }
+
   constructor(
-    public mockTreeLookupService: MockTreeLookupService 
-  ){
+    public mockTreeLookupService: MockTreeLookupService
+  ) {
 
   }
-  
+
 }

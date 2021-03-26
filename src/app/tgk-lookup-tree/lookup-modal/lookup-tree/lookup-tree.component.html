@@ -5,15 +5,15 @@
 </div>   -->
 <kendo-treeview
 [nodes]="data"
-textField="text"
-childrenField="items"
+textField="desc"
+childrenField="children"
 [kendoTreeViewCheckable]="checkableSettings"
 class="pt-5"
 kendoTreeViewExpandable
 kendoTreeViewHierarchyBinding
 (change)="onSelectItem($event)"
 [(checkedKeys)]="checkedKeys"
-[checkBy]="'text'"
+[checkBy]="'desc'"
 
 
 >

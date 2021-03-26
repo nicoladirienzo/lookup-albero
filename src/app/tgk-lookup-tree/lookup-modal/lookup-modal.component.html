@@ -10,8 +10,8 @@
         <!-- Root nodes combobox -->
         <kendo-combobox [ngClass]="'cmbox'"  
           [data]="listRoots" 
-          [textField]="'text'"
-          [valueField]="'id'"
+          [textField]="'desc'"
+          [valueField]="'code'"
           [(ngModel)]="selectedRoot"
           [allowCustom]="allowCustom" 
           (selectionChange)="selectionChange($event)"
@@ -28,6 +28,8 @@
           [data]="listChildren"
           [checkedKeys]="checkedValues"
           (checkedSelectionChanged)="onTreeValueChange($event)"
+          [rootServiceParam]="rootServiceParam"
+          [treeService]="treeService"
         ></app-lookup-tree>
       </div>
 

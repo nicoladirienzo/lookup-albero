@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { TreeModel } from './model/lookup-tree.model';
+import { LookupRootServiceParameters} from './model/lookup-tree.model';
 import { TgkTreeViewService } from './service/tgk-lookup-tree.services';
 
 
@@ -46,6 +46,10 @@ export class TgkLookupTreeComponent implements OnInit {
  */
   @Input()
   public checkMode: any;
+
+
+  @Input()
+  rootServiceParam: LookupRootServiceParameters;
 
   /**
    * Generic Tree Lookup service. A concrete service must be

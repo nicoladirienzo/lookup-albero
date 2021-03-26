@@ -1,6 +1,5 @@
-import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { TreeModel } from "../model/lookup-tree.model";
+import { TreeLookupItem } from "../model/lookup-tree.model";
 
 
 
@@ -19,7 +18,7 @@ export interface TgkTreeViewService {
      * @param params - Receives a variable list of parameters that changing based on its 
      * specific implementation.
      */
-     getRoots(...params): Observable<TreeModel[]>;
+     getRoots(...params): Observable<TreeLookupItem[]>;
 
 
     /**
@@ -36,6 +35,6 @@ export interface TgkTreeViewService {
      * @param params - Receives a variable list of parameters that changing based on its 
      * specific implementation.
      */
-     getChildren(level:string , hierarchicalCode:string, parentNodeCode:string, ...args): Observable<TreeModel[]>;
+     getChildren(level:string , hierarchicalCode:string, parentNodeCode:string, ...args): Observable<TreeLookupItem[]>;
 
 }

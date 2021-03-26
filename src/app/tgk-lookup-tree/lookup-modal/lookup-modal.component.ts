@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild, ViewEncapsulation } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable, pipe, Subscription } from 'rxjs';
-import { TreeModel } from '../model/lookup-tree.model';
+import { LookupRootServiceParameters, TreeLookupItem} from '../model/lookup-tree.model';
 import { TgkTreeViewService } from '../service/tgk-lookup-tree.services';
 import { LookupTreeComponent } from './lookup-tree/lookup-tree.component';
 
@@ -36,6 +36,14 @@ export class LookupModalComponent implements OnInit, OnDestroy {
   @Input()
   public treeService: TgkTreeViewService;
 
+  /**
+   * Params needed by the service that fetched the nodes of the tree.
+   */
+  @Input()
+  public rootServiceParam: LookupRootServiceParameters;
+
+  
+
   // valori attualmente selezionati. Sono passati sia alla lookupTree che all'area di selezione
   @Input()
   public checkedValues: any[];
@@ -47,25 +55,25 @@ export class LookupModalComponent implements OnInit, OnDestroy {
   /**
    * Root node currently selected
    */
-  public selectedRoot: TreeModel
+  public selectedRoot: TreeLookupItem
 
   /**
    * List of roots node fetched from the related service
    */
-  public listRoots: Array<TreeModel> = [];
+  public listRoots: Array<TreeLookupItem> = [];
 
   /**
    * List of children node fetched from the related service based on 
    * the current selectedRoot
    */
-  public listChildren: Array<TreeModel> = [];
+  public listChildren: Array<TreeLookupItem> = [];
 
 
   constructor() { }
 
   ngOnInit(): void {
     if (!this.treeService) return;
-    this.rootNodesSubscription = this.treeService.getRoots().
+    this.rootNodesSubscription = this.treeService.getRoots(this.rootServiceParam).
       subscribe(rootNodesResult => {
         this.listRoots = rootNodesResult;
         // In the case there is only one root node, it will be automatically selected
@@ -109,26 +117,30 @@ export class LookupModalComponent implements OnInit, OnDestroy {
 
   //Cattura la selezione di un nuovo elemento della combobox, ad esempio se mi muovo con le frecce della tastiera 
   //tra gli elementi della combobox senza premere invio.
-  public selectionChange(value: TreeModel): void {
+  public selectionChange(value: TreeLookupItem): void {
     console.log('Hai selezionato:', value);
   }
 
   //Cattura il cambio del valore nella combobox, quando clicco o premo invio 
   //tra gli elementi della combobox.
-  public valueChange(value: TreeModel): void {
+  public valueChange(value: TreeLookupItem): void {
+    console.log('Hai cambiato:', value);
     this.listChildren = []
+    
     if (value) {
-      console.log('Hai cambiato:', value);
+      this.listChildren.push(value);
+      // console.log('servizio figli:', this.treeService.getChildren);
 
-      this.treeService.getChildren("root", "root", "root").subscribe(
-        (childrenRes) => {
-          childrenRes.forEach(
-            (elem)=>{
-              if(value.id === elem.id)
-                this.listChildren.push(elem);
-            }  
-          );
-        });
+
+      // this.treeService.getChildren("level-1", "herarchical_code", value.code).subscribe(
+      //   (childrenRes) => {
+      //     childrenRes.forEach(
+      //       (elem)=>{
+      //         if(value.code === elem.code)
+      //           this.listChildren.push(elem);
+      //       }  
+      //     );
+      //   });
     }
   }
 
@@ -137,8 +149,5 @@ export class LookupModalComponent implements OnInit, OnDestroy {
     this.checkedValues = changedValues;
   }
 
-}
-function tap(): import("rxjs").OperatorFunction<TreeModel[], unknown> {
-  throw new Error('Function not implemented.');
 }
 

@@ -28,6 +28,7 @@ import { EffectsModule } from '@ngrx/effects';
 
 import { ReactiveComponentModule } from '@ngrx/component';
 import { MockTreeLookupService } from "./mock.service";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   imports: [
@@ -43,7 +44,8 @@ import { MockTreeLookupService } from "./mock.service";
     ReactiveFormsModule,
     ReactiveComponentModule,
     DropDownsModule,
-    WindowModule
+    WindowModule,
+    HttpClientModule
   ],
   declarations: [AppComponent, HelloComponent, TgkLookupTreeComponent, LookupModalComponent, LookupTreeComponent, LookupSelectionAreaComponent, LookupFieldComponent],
   bootstrap: [AppComponent],

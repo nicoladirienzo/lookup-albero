@@ -1,143 +1,95 @@
-import { TreeModel } from "./tgk-lookup-tree/model/lookup-tree.model";
+import { TreeLookupItem } from "./tgk-lookup-tree/model/lookup-tree.model";
 
 
 /**
  * Mock data that contains only root nodes.
  */
-export const treeRootData: TreeModel[] = [
-    {
-      text: "Furniture",
-      id: "1",
-      hasChildren: true
-    },
-    {
-        text: "Decor",
-        id: "5",
-        hasChildren: true
-    },
-    {
-        text: "Vehicles",
-        id: "9",
-        hasChildren: true
-    }
+export const treeRootData: TreeLookupItem[] = [
+  {
+    code:'R1',
+    desc:'Vehicles',
+    hierarchicalCode:'R',
+    type:"_ROOT_"
+  },
+  {
+    code:'R2',
+    desc:'Weapons',
+    hierarchicalCode:'R',
+    type:"_ROOT_"
+  },
+  {
+    code:'R3',
+    desc:'Clothes',
+    hierarchicalCode:'R',
+    type:"_ROOT_"
+  }
 
 ]
 
 /**
  * Mock data that contains a single root node.
  */
- export const singleTreeRootData: TreeModel[] = [
+ export const singleTreeRootData: TreeLookupItem[] = [
   {
-    text: "OnlyOne",
-    id: "1",
-    hasChildren: true
-  },
+    code:'R4',
+    desc:'Foods',
+    hierarchicalCode:'R',
+    type:"_ROOT_"
+  }
 
 ]
 
 
 
-/**
- * Mock data that contains the complete tree structure.
- */
-export const treeData: TreeModel[] = [
-    {
-      text: "Furniture",
-      id: "1",
-      hasChildren: true,
-      children: [
-        {
-          text: "Tables & Chairs",
-          hasChildren: false,
-          id: "2"
-        },
-        {
-          text: "Sofas",
-          hasChildren: false,
-          id: "3"
-        },
-        {
-          text: "Occasional Furniture",
-          hasChildren: false,
-          id: "4"
-        }
-      ]
-    },
-    {
-      text: "Decor",
-      id: "5",
-      hasChildren: true,
+export const weaponsChilderenData: TreeLookupItem[] = [
 
-      children: [
-        {
-          text: "Bed Linen",
-          hasChildren: false,
-          id: "6"
-        },
-        {
-          text: "Curtains & Blinds",
-          hasChildren: false,
-          id: "7"
-        },
-        {
-          text: "Carpets",
-          hasChildren: false,
-          id: "8"
-        }
-      ]
-    },
+  {
+    code:'C1',
+    desc:'Assault Rifle',
+    hierarchicalCode:'C',
+    type:"NODE"
+  },
+  {
+    code:'C2',
+    desc:'Shotgun',
+    hierarchicalCode:'C',
+    type:"NODE"
+  },
+  {
+    code:'C3',
+    desc:'Axe',
+    hierarchicalCode:'C',
+    type:"NODE"
+  },
 
-    {
-      text: "Vehicles",
-      id: "9",
-      hasChildren: true,
-      children: [
-        {
-          text: "Car",
-          id: "10",
-          hasChildren: true,
-          children: [
-            {
-              text: "Ferrari",
-              hasChildren: false,
+]
 
-              id: "12"
-            },
-            {
-              text: "Alfa Romeo",
-              hasChildren: false,
-              id: "13"
-            },
-            {
-              text: "Volvo",
-              hasChildren: false,
-              id: "14"
-            },
-            {
-              text: "Dacia",
-              hasChildren: false,
-              id: "15"
-            },
-          ]
-        },
-        {
-          text: "Van",
-          hasChildren: false,
-          id: "16"
-        },
-        {
-          text: "Truck",
-          id: "11",
-          hasChildren: true,
 
-          children: [
-            {
-              text: "Scania",
-              hasChildren: false,
-              id: "17"
-            },
-          ]
-        }
-      ]
-    }
-  ];
+export const vehiclesChilderenData: TreeLookupItem[] = [
+
+  {
+    code:'C4',
+    desc:'Car',
+    hierarchicalCode:'C',
+    type:"NODE"
+  },
+  {
+    code:'C5',
+    desc:'Boat',
+    hierarchicalCode:'C',
+    type:"NODE"
+  },
+  {
+    code:'C7',
+    desc:'Plane',
+    hierarchicalCode:'C',
+    type:"NODE"
+  },
+  {
+    code:'C6',
+    desc:'Scania',
+    hierarchicalCode:'C',
+    type:"LEAF"
+  },
+
+]

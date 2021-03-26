@@ -2,31 +2,39 @@
 
 export type checkType = 'single' | 'multiple'
 
+export type TreeNodeType = '_ROOT_' | 'NODE' | 'LEAF'
+
+
 /**
  * Tipo che rappresenta il modello dell'albero. In particolare un nodo dell'albero.
  * I field relativi a questo modello sono 'letti' dal componente <kendo-treeview>; 
  * 
- * @field text - rappresenta la descrizione visibile a video dell'elemento. 
+ * @field desc - rappresenta la descrizione visibile a video dell'elemento. 
  * È anche il valore che verrà selezionato ed inserito nella lista degli elementi
  * selezionati.
  * 
- * @field id - rappresenta l'id del nodo è univoco per definizione; 
+ * @field code - rappresenta l'id del nodo è univoco per definizione; 
  * non viene visualizzato a video. 
  * 
  * @field children - rappresenta la lista dei figli del nodo
  * ognuno dei quali è  a sua volta un TreeModel.
  * Per le foglie questo campo sarà nullo.
  * 
- * @field hasChildren - indica se il nodo in questione ha figli o meno.
- * A livello generale non è sufficente verificare la lunghezza della lista 
- * children per ottenere questa informazione; infatti nei casi di caricamento
- * lazy dei nodi ci potrebbe essere un nodo con i figli non ancora caricati, ma che
- * effettivamente ne ha.
+ * @field type - is the type of the node that can be root, node or leaf.
+ * 
  * 
  */
-export interface TreeModel {
-    text: string;
-    id: string;
-    children?: TreeModel[];
-    hasChildren: boolean;
+export interface TreeLookupItem {
+    code: string;
+    desc: string;
+    type: TreeNodeType;
+    hierarchicalCode: string;
+    children?: TreeLookupItem[];
+
+}
+
+
+export interface LookupRootServiceParameters {
+    dbId: string;
+    parameter: any;
 }

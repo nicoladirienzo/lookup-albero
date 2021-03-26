@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output, ViewChild, ViewEncapsulation } from '@angular/core';
 import { CheckableSettings } from '@progress/kendo-angular-treeview';
-import { TreeModel } from '../../model/lookup-tree.model';
+import { LookupRootServiceParameters, TreeLookupItem, } from '../../model/lookup-tree.model';
+import { TgkTreeViewService } from '../../service/tgk-lookup-tree.services';
 
 @Component({
   selector: 'app-lookup-tree',
@@ -28,12 +29,18 @@ export class LookupTreeComponent implements OnInit {
   public checkMode: any;
   
   @Input()
-  public data: TreeModel[];
+  public data: TreeLookupItem[];
 
   @Input()
   public checkedKeys: any[];
 
   @Output() checkedSelectionChanged: EventEmitter<any[]> = new EventEmitter<any[]>();
+
+  @Input()
+  rootServiceParam: LookupRootServiceParameters;
+
+  @Input()
+  public treeService: TgkTreeViewService;
 
 
 
@@ -62,8 +69,6 @@ export class LookupTreeComponent implements OnInit {
   onSelectItem(event:any){
     this.checkedSelectionChanged.emit(this.checkedKeys)
   }
-
-  
 
 
 }
