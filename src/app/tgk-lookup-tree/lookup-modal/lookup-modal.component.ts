@@ -122,9 +122,13 @@ export class LookupModalComponent implements OnInit, OnDestroy {
 
       this.treeService.getChildren("root", "root", "root").subscribe(
         (childrenRes) => {
-          this.listChildren = childrenRes;
-        }
-      );
+          childrenRes.forEach(
+            (elem)=>{
+              if(value.id === elem.id)
+                this.listChildren.push(elem);
+            }  
+          );
+        });
     }
   }
 
