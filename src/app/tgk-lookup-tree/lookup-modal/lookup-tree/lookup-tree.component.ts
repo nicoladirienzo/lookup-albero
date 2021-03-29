@@ -68,5 +68,10 @@ export class LookupTreeComponent implements OnInit {
     this.checkedSelectionChanged.emit(this.checkedKeys)
   }
 
+  nodeExpandListener(value:any){
+    console.log("espansione del nodo :", value);
+    // this.treeService.getChildren()
+  }
+
 
 }
