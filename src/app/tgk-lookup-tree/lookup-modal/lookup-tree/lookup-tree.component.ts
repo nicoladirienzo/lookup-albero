@@ -52,7 +52,7 @@ export class LookupTreeComponent implements OnInit {
     };
   }
 
-  public hasChildren = (dataItem: any): boolean => !!dataItem.items;
+  public hasChildren = (dataItem: any): boolean => !!dataItem.children;
 
   public expanded = true;
 
