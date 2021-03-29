@@ -19,6 +19,7 @@ export class MockTreeLookupService implements TgkTreeViewService {
   constructor(private http: HttpClient) { }
 
   public getChildren(level: string, hierarchicalCode: string, parentNodeCode: string, ...args: any[]): Observable<TreeLookupItem[]> {
+
     if(parentNodeCode === "R1"){
 
       return of(vehiclesChilderenData);
@@ -32,22 +33,26 @@ export class MockTreeLookupService implements TgkTreeViewService {
   public getRoots(dbId:string, body:{}): Observable<any> {
 
     // TODO RIPARTIRE DA CHIAMATA SERVIZIO VERA.... BUTTARE SU TAGETIK
-    // const headerDict = {
-    //   'Content-Type': 'application/json',
-    //   'Accept': 'application/json',
-    //   'Access-Control-Allow-Headers': 'Content-Type',
-    //   'DB_ID': dbId
-    // }
+    const headerDict = {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+      'Access-Control-Allow-Headers': 'Content-Type',
+      'DB_ID': dbId
+    }
 
-    // const header = new HttpHeaders(headerDict);
+    const header = new HttpHeaders(headerDict);
 
-    // const requestOptions = {                                                                                                                                                                                 
-    //   headers: new HttpHeaders(headerDict)
+    const requestOptions = {                                                                                                                                                                                 
+      headers: new HttpHeaders(headerDict)
     
-    // };
+    };
 
     // return this.http
     //     .post<TreeLookupItem[]>(BASE_ANGULAR_URL+'/scenarioperiodo/treelookup/roots', body, requestOptions)
+    console.log("invocazione servizio per recupero delle radici:",BASE_ANGULAR_URL+'/scenarioperiodo/treelookup/roots');
+    console.log("Passato header:",headerDict);
+    
+
  
     return of(treeRootData)
   }

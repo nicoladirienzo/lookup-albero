@@ -42,8 +42,6 @@ export class LookupTreeComponent implements OnInit {
   @Input()
   public treeService: TgkTreeViewService;
 
-
-
   public get checkableSettings(): CheckableSettings {
     return {
       checkChildren: this.checkChildren,
@@ -62,9 +60,9 @@ export class LookupTreeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
   }
 
-  
   // listener lanciato alla selezione di un nuovo elemento dell'albero
   onSelectItem(event:any){
     this.checkedSelectionChanged.emit(this.checkedKeys)

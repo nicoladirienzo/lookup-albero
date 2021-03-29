@@ -6,21 +6,21 @@ export type TreeNodeType = '_ROOT_' | 'NODE' | 'LEAF'
 
 
 /**
- * Tipo che rappresenta il modello dell'albero. In particolare un nodo dell'albero.
- * I field relativi a questo modello sono 'letti' dal componente <kendo-treeview>; 
  * 
- * @field desc - rappresenta la descrizione visibile a video dell'elemento. 
- * È anche il valore che verrà selezionato ed inserito nella lista degli elementi
- * selezionati.
+ * Represent the model of the nodes of the tree; The field are used by the component
+ * <kendo-treeview>.
  * 
- * @field code - rappresenta l'id del nodo è univoco per definizione; 
- * non viene visualizzato a video. 
+ * @field code - identify, with the hierarchical code, uniquely a node.                    
  * 
- * @field children - rappresenta la lista dei figli del nodo
- * ognuno dei quali è  a sua volta un TreeModel.
- * Per le foglie questo campo sarà nullo.
- * 
+ * @field desc - contain the description of the node. Generally is the value shown on video. 
+ *  
  * @field type - is the type of the node that can be root, node or leaf.
+ * 
+ * @field hierarchicalCode - identify, with the code, uniquely a node.
+ * 
+ * @field children - contains the list of the children of the node. Each of them is TreeModel; 
+ * leaf nodes don't have a children, so this list is empty.
+ * 
  * 
  * 
  */
@@ -33,7 +33,14 @@ export interface TreeLookupItem {
 
 }
 
-
+/**
+ * Rapresent the parameters to passed to the related service for fetch the nodes of the tree.
+ * 
+ *  @field dbId - indetify uniquely the database where the service will be called.
+ * 
+ *  @field parameter - can contains any kind of stuff that represent the parameters of the related service.
+ *  
+ */
 export interface LookupRootServiceParameters {
     dbId: string;
     parameter: any;

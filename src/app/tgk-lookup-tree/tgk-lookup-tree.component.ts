@@ -48,6 +48,10 @@ export class TgkLookupTreeComponent implements OnInit {
   public checkMode: any;
 
 
+  /**
+   * Contains the parameters needed for the calling of the service for fetch 
+   * the root nodes of the tree.
+   */
   @Input()
   rootServiceParam: LookupRootServiceParameters;
 

@@ -42,7 +42,6 @@ export class LookupModalComponent implements OnInit, OnDestroy {
   @Input()
   public rootServiceParam: LookupRootServiceParameters;
 
-  
 
   // valori attualmente selezionati. Sono passati sia alla lookupTree che all'area di selezione
   @Input()
@@ -66,7 +65,7 @@ export class LookupModalComponent implements OnInit, OnDestroy {
    * List of children node fetched from the related service based on 
    * the current selectedRoot
    */
-  public listChildren: Array<TreeLookupItem> = [];
+  public currentSelectedRoot: Array<TreeLookupItem> = [];
 
 
   constructor() { }
@@ -125,22 +124,10 @@ export class LookupModalComponent implements OnInit, OnDestroy {
   //tra gli elementi della combobox.
   public valueChange(value: TreeLookupItem): void {
     console.log('Hai cambiato:', value);
-    this.listChildren = []
+    this.currentSelectedRoot = []
     
     if (value) {
-      this.listChildren.push(value);
-      // console.log('servizio figli:', this.treeService.getChildren);
-
-
-      // this.treeService.getChildren("level-1", "herarchical_code", value.code).subscribe(
-      //   (childrenRes) => {
-      //     childrenRes.forEach(
-      //       (elem)=>{
-      //         if(value.code === elem.code)
-      //           this.listChildren.push(elem);
-      //       }  
-      //     );
-      //   });
+      this.currentSelectedRoot.push(value);
     }
   }
 
