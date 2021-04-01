@@ -9,7 +9,35 @@ export const treeRootData: TreeLookupItem[] = [
     code:'R1',
     desc:'Vehicles',
     hierarchicalCode:'R',
-    type:"_ROOT_"
+    type:"_ROOT_",
+    children: [
+      {
+        code:'C4',
+        desc:'Car',
+        hierarchicalCode:'C',
+        type:"LEAF"
+      },
+      {
+        code:'C5',
+        desc:'Boat',
+        hierarchicalCode:'C',
+        type:"NODE",
+        children: [
+          {
+            code:'C7',
+            desc:'Plane',
+            hierarchicalCode:'C',
+            type:"LEAF"
+          },
+          {
+            code:'C6',
+            desc:'Scania',
+            hierarchicalCode:'C',
+            type:"LEAF"
+          }
+        ]
+      }      
+    ]
   },
   {
     code:'R2',

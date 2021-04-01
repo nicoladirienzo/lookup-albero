@@ -30,6 +30,9 @@ export class LookupModalComponent implements OnInit, OnDestroy {
   public checkOnClick;
 
   @Input()
+  public leafOnlySelection;
+
+  @Input()
   public checkMode: any;
 
 

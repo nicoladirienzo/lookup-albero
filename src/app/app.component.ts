@@ -24,8 +24,9 @@ export class AppComponent {
 
   public checkOnClick = false;
 
+  public leafOnlySelection = true;  
 
-  public checkMode: checkType = "multiple";
+  public checkMode: checkType = "single";
 
   public mockTreeLookupServiceParams: LookupRootServiceParameters = {
     dbId: "TCPM_DEMO_DEV",

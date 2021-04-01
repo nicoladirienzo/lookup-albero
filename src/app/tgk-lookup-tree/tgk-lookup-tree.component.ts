@@ -47,6 +47,11 @@ export class TgkLookupTreeComponent implements OnInit {
   @Input()
   public checkMode: any;
 
+  /**
+   * 
+   */
+  @Input()
+  public leafOnlySelection;
 
   /**
    * Contains the parameters needed for the calling of the service for fetch 

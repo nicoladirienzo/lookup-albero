@@ -11,10 +11,18 @@ childrenField="children"
 class="pt-5"
 kendoTreeViewExpandable
 kendoTreeViewHierarchyBinding
-(change)="onSelectItem($event)"
-[(checkedKeys)]="checkedKeys"
-[checkBy]="'desc'"
+[isChecked]="isItemChecked"
+(checkedChange)="handleChecking($event)"
 (expand)="nodeExpandListener($event)"
 
 >
+
+ <!-- <ng-template kendoTreeViewNodeTemplate let-dataItem>
+  <input class="k-checkbox" type="checkbox" *ngIf="!hasChildren(dataItem)" (click)="onSelectItem($event)"/>
+  <span class="k-in">{{ dataItem.desc }}</span>
+</ng-template> -->
+
 </kendo-treeview>
+
+
+
